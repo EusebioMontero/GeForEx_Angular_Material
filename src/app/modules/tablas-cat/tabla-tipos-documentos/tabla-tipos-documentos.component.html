@@ -1,0 +1,24 @@
+<mat-card class="card-tablas">
+  <button mat-mini-fab class="m-2" (click)="goMenu()" color="primary"><mat-icon>menu</mat-icon></button>
+  <mat-card-title>Mantenimiento de tabla "Tipos de Documentos"</mat-card-title>
+  <mat-card-actions class="card-actions"></mat-card-actions>
+</mat-card>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="dotTipodocumentoid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dotTipodocumentoid}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dotDescripcion">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPCION </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dotDescripcion}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editar(row)"
+      (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+
+  </table>
+  <button class="add-button" mat-raised-button color="primary" (click)="nuevo()">Nuevo</button>
+
+</div>

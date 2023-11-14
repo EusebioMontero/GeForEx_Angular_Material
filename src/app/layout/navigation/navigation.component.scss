@@ -1,0 +1,75 @@
+#main-container {
+  min-height: 85vh;
+  // background-image: url("../../../assets/images/Inicio.png");
+  // background-image: fixed;
+  background-position: center;
+  background-image: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidenav {
+  min-width: 25vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidenav-list {}
+
+.sidenav-list-item {}
+
+.sidenav-span {
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 1em;
+
+}
+
+.sidenav-icon {
+  align-items: start;
+  vertical-align: middle;
+}
+
+.tool-bar-button {
+  margin-right: 5px;
+  width: auto;
+  height: auto;
+}
+
+
+// .base-container {
+// min-height: calc(100vh - 80px - 60px);
+
+// }
+
+#toolBarLeft {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+#toolBarRight {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+.toolbar {
+  // height: 80px;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}

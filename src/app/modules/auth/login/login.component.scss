@@ -1,0 +1,20 @@
+.container{
+  height: 80vh;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+
+}
+#login-card{
+  height: 15em;
+}
+.example-form {
+  max-height: 20vh;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

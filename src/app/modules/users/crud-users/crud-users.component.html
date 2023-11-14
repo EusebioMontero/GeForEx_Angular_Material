@@ -1,0 +1,5 @@
+<mat-grid-list cols="10" rowHeight="5vh" gutterSize="0px"> <!-- 10 columnas y 85/5=17 filas -->
+  <mat-grid-tile class="border border-primary" colspan="10" rowspan="3"><p>buscador</p></mat-grid-tile>
+  <mat-grid-tile class="border border-primary" colspan="2" rowspan="14"><app-list-users (messageEvent)="receiveId($event)"></app-list-users></mat-grid-tile>
+  <mat-grid-tile class="border border-primary" colspan="8" rowspan="14"><app-detail-users [idUser]="idUser"></app-detail-users></mat-grid-tile>
+</mat-grid-list>

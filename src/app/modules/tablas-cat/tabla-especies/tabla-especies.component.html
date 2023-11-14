@@ -1,0 +1,27 @@
+<mat-card class="card-tablas">
+  <button mat-mini-fab class="m-2" (click)="goMenu()" color="primary"><mat-icon>menu</mat-icon></button>
+  <mat-card-title>Mantenimiento de tabla "Especies"</mat-card-title>
+  <mat-card-actions class="card-actions"></mat-card-actions>
+</mat-card>
+
+<div class="table-container" tabindex="0">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="espEspecieid">
+      <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number"> ID. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.espEspecieid}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="espNombrecomun">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> NOMBRE COMUN </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.espNombrecomun}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="espEspecieprotegida">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ESPECIE PROTEGIDA </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.espEspecieprotegida}} </mat-cell>
+    </ng-container>
+    <mat-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editar(row)"
+      (click)="row.highlighted = !row.highlighted" (click)="row.isEdit = !row.isEdit"></mat-row>
+  </table>
+  <button class="add-button" mat-raised-button color="primary" (click)="nuevo()">Nuevo</button>
+</div>
+<!-- <router-outlet></router-outlet> -->

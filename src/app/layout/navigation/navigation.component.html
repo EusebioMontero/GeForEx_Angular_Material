@@ -1,0 +1,70 @@
+<div class="sidenav-content">
+  <mat-toolbar color="primary" class="toolbar">
+    <div id="toolBarLeft">
+      <div class="sidenav-button-container">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+      </div>
+      <span class="title">GeForEx</span>
+    </div>
+    <div id="toolBarCenter">
+      <mat-card *ngIf="isLogedIn" class="card-tablas">
+        <mat-card-header>
+          <mat-card-title>{{userLoged.nombre}}</mat-card-title>
+          <img src="https://cdn.pixabay.com/photo/2023/01/26/08/21/office-7745317_1280.png" mat-card-avatar />
+          <mat-card-subtitle>{{userLoged.rol}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div id="toolBarRight">
+      <button *ngIf="!isLogedIn" mat-raised-button class="tool-bar-button" id="btnlogin" color="accent"
+        routerLink="/auth/login">LOG-IN
+        <mat-icon>login</mat-icon>
+      </button>
+      <button *ngIf="isLogedIn" mat-raised-button class="tool-bar-button" id="btnlogout" color="accent"
+        routerLink="/auth/logout">LOG-OUT
+        <mat-icon>logout</mat-icon>
+      </button>
+      <button mat-fab class="tool-bar-button p-2" id="btnhome" color="accent" routerLink="/">
+        <mat-icon>home</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="sidenav" #snav>
+      <mat-nav-list class="sidenav-list">
+        <mat-list-item class="sidenav-list-item" routerLink="/">
+          <mat-icon class="sidenav-icon">home</mat-icon>
+          <span class="sidenav-span">Inicio</span>
+        </mat-list-item>
+        <!-- <mat-list-item class="sidenav-list-item" routerLink="/users/crud-users">
+          <mat-icon class="sidenav-icon">people</mat-icon>
+          <span class="sidenav-span">Gestion de usuarios</span>
+        </mat-list-item> -->
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-icon class="sidenav-icon">table_chart</mat-icon>
+            <span class="sidenav-span">Catálogo tablas Mantenimiento</span>
+          </mat-expansion-panel-header>
+
+          <mat-list-item *ngFor="let item of itemTablas">
+            <a mat-list-item [routerLink]="item.route"><mat-icon class="sidenav-icon">{{item.icon}}</mat-icon><span
+                class="sidenav-span">{{item.text}}</span></a>
+          </mat-list-item>
+        </mat-expansion-panel>
+
+        <!--
+          <a class="" mat-list-item [routerLink]="nav.route" *ngFor="let nav of fillerNav">
+          <mat-icon class="iconnav">{{nav.icon}}</mat-icon>{{nav.text}}</a>
+      -->
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div id="main-container" *ngIf="isHome" style="background-image: url('../../../assets/images/Inicio.png')">
+        <router-outlet></router-outlet>
+      </div>
+      <div id="main-container" *ngIf="!isHome" style="background-image: url('../../../assets/images/fondo.png')">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

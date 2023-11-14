@@ -1,0 +1,13 @@
+<mat-card class="menu-card-tablas">
+  <mat-card-title>Catálogo de Mantenimiento</mat-card-title>
+</mat-card>
+
+<div class="menu-container-navList-tablas">
+  <mat-nav-list class="menu-navList-tablas ">
+    <mat-list-item class="menu-navListItem-tablas mat-elevation-z4" *ngFor="let item of menuNav; let i = index">
+      <a *ngIf="i !== 0" mat-list-item [routerLink]="item.route"><mat-icon *ngIf="i !== 0"
+          class="menu-navListItem-icon">{{item.icon}}</mat-icon>{{item.text}}</a>
+      <button *ngIf="i !== 0" mat-icon-button matListItemMeta><mat-icon>info</mat-icon></button>
+    </mat-list-item>
+  </mat-nav-list>
+</div>

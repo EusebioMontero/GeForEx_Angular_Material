@@ -1,0 +1,28 @@
+mat-card {
+  min-height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: left;
+  padding-left: 10px;
+}
+
+.add-button {
+  position: relative;
+  margin: 5px;
+}
+
+.table-container {
+  margin: 2em;
+}
+
+mat-header-cell {
+  color: rgba(21, 143, 29, 0.718);
+  border-bottom: 3px solid rgba(8, 114, 51, 0.193);
+}
+
+mat-row:hover mat-cell {
+  color: rgba(248, 79, 7, 0.862);
+  border-bottom: 2px solid rgba(243, 50, 6, 0.781);
+}

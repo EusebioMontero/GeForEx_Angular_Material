@@ -1,0 +1,40 @@
+    <div fxLayout="column" class="scroller">
+      <div *ngFor="let c of cardsUser">
+        <mat-card class="card-tablas">
+          <mat-card-header>
+            <mat-card-title>{{c.title}}</mat-card-title>
+            <img src={{c.avatar}} mat-card-avatar />
+            <mat-card-subtitle>{{c.subtitle}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Rol: {{c.rol}}</p>
+          </mat-card-content>
+          <mat-card-footer>
+            <mat-card-actions align="start">
+              <button mat-raised-button color="primary" (click)="onDetailClick(c.id)">Detalles</button>
+            </mat-card-actions>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+
+<!-- <div class="container">
+  <div fxLayout="column wrap">
+        <mat-nav-list >
+      <mat-card class="card" mat-list-item [routerLink]="" *ngFor="let c of cardsUser">
+        <mat-card-header>
+          <mat-card-title>{{c.title}}</mat-card-title>
+          <img src={{c.avatar}} mat-card-avatar/>
+          <mat-card-subtitle>{{c.subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content><p>Rol: {{c.rol}}</p></mat-card-content>
+        <mat-card-footer>
+          <mat-card-actions align="start">
+            <button mat-raised-button color="primary" (click)="onDetailClick(c.id)">Detalles</button>
+          </mat-card-actions>
+        </mat-card-footer>
+      </mat-card>
+    </mat-nav-list>
+  </div>
+
+</div> -->
